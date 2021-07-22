@@ -1,0 +1,31 @@
+{
+    "name":"News-O-Meter",
+    "version":"1.0",
+    "manifest_version":2,
+    
+    "background": {
+        "scripts": ["background.js"]
+    },
+    
+    "content_scripts": [{
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+      }],
+    
+    "description":"Use artificial Intelligence to determine if a news article is real or fake!",
+    "icons": {
+      "128":"1.png"
+    },
+    
+    "browser_action": {
+      "default_title":"News-O-Meter",
+      "default_icon": "1.png",
+      "default_popup":"popup.html"
+    },
+    
+    "permissions": [
+        "http://*/*", "https://*/*"
+      ]
+    }
