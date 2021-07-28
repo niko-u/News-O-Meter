@@ -1,9 +1,17 @@
 console.log("Popup script is running...");
 
-//listen for button click and start communication to content script
-document.getElementById("input").addEventListener("click", start);
+let backgroundPage = chrome.extension.getBackgroundPage();
 
-function start() {
-    //sending message to content script to begin running
-    chrome.tabs.sendMessage(tab.id, "true");
+let text = backgroundPage.text;
+let rating = backgroundPage.rating;
+let percentage = backgroundPage.rating;
+
+console.log(text);
+
+document.getElementById("input").addEventListener("click", message());
+
+function message() {
+    chrome.runtime.sendMessage({
+        start: true
+    })
 }
